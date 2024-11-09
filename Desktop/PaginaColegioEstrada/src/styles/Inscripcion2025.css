@@ -1,0 +1,49 @@
+.inscripcion-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.titulo-inscripcion {
+  font-size: 40px;
+  font-weight: bold;
+  color: #2274a5; /* Puedes cambiarlo según el diseño */
+  margin-bottom: 20px;
+}
+
+.barra-inscripcion {
+  border: none;
+  height: 2px; /* Alto de la barra */
+  background-color: #2274a5; /* Color de la barra */
+  margin-top: 20px; /* Espacio entre el contenido y la barra */
+  width: 100%; /* Hace que ocupe todo el ancho de la caja */
+  max-width: 800px; /* Se ajusta al tamaño máximo de la caja */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.caja-inscripcion {
+  background-color: #7cc1f3; /* Color celeste */
+  color: #333;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 16px;
+}
+
+.texto-inscripcion {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.texto-inscripcion a {
+  color: #1f76bd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.texto-inscripcion a:hover {
+  text-decoration: underline;
+}
