@@ -1,0 +1,87 @@
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 35%; /* Subimos el texto más cerca del borde superior */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Efecto de máquina de escribir sin barra parpadeante */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2.5s steps(40, end); /* Eliminamos la animación de parpadeo */
+  font-size: 3.5em; /* Tamaño triplicado */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+/* Estilos para los botones */
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 24px;
+  color: black;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}

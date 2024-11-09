@@ -1,0 +1,73 @@
+.level-boxes {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 10px;
+
+  .box {
+    color: white;
+    padding: 15px;
+    width: calc(100% / 4 - 10px);
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: left;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    .logo {
+      margin-top: 15px;
+      font-size: 40px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .titulo-box {
+      margin-top: 70px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    .circle-button {
+      margin-top: 40px; /* Empuja el botón hacia el final de la caja */
+      align-self: flex-start;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #1f76bd;
+      font-size: 22px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+}
+
+/* Colores específicos para cada caja */
+.box-color1 {
+  background-color: #2274a5;
+}
+.box-color2 {
+  background-color: #e15554;
+}
+.box-color3 {
+  background-color: #fcdf51;
+}
+.box-color4 {
+  background-color: #7cc1f3;
+}
