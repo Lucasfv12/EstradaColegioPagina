@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/NavBar.css";
+import "../styles/Navbar.css";
 import logo from "../assets/Escudosinfondo.png"; // Asegúrate de que la ruta sea correcta
 
 const NavBar = ({ className }) => {
