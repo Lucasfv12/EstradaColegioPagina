@@ -3,6 +3,11 @@
   max-width: 100%;
   overflow: hidden;
   margin: auto;
+  transition: margin-top 0.3s ease; /* Transición para mover el carrusel hacia abajo */
+}
+
+.carousel-container.menu-open {
+  margin-top: 100px; /* Mover el carrusel hacia abajo cuando el menú está abierto */
 }
 
 .carousel {
@@ -42,6 +47,7 @@
   text-transform: uppercase;
 }
 
+/* Animación de tipo máquina de escribir */
 @keyframes typing {
   from {
     width: 0;
@@ -51,6 +57,7 @@
   }
 }
 
+/* Efecto de parpadeo (no se usa en este caso, pero lo dejamos por si quieres activarlo) */
 @keyframes blink {
   from,
   to {
@@ -84,4 +91,37 @@ button.next {
 
 button:hover {
   background-color: rgba(255, 255, 255, 1);
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .carousel-caption {
+    top: 25%; /* Ajusta la posición del texto para pantallas más pequeñas */
+  }
+
+  .typewriter {
+    font-size: 1em; /* Reducimos el tamaño del texto en dispositivos más pequeños */
+    animation: typing 3s steps(30, end); /* Ajusta la animación para que sea un poco más lenta */
+  }
+
+  button {
+    font-size: 18px; /* Reducimos el tamaño de los botones */
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-caption {
+    top: 20%; /* Ajusta aún más la posición en pantallas muy pequeñas */
+  }
+
+  .typewriter {
+    font-size: 0.5em; /* Reducimos más el tamaño del texto en pantallas muy pequeñas */
+    animation: typing 3s steps(25, end); /* Lenta aún más la animación */
+  }
+
+  button {
+    font-size: 16px; /* Ajustamos los botones a pantallas muy pequeñas */
+    padding: 6px;
+  }
 }

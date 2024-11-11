@@ -1,12 +1,14 @@
 .inscripcion-container {
   text-align: center;
-  margin: 40px 0;
+  margin: 40px auto; /* Centrado con márgenes */
+  width: 90%; /* Definir el ancho al 90% */
+  max-width: 1000px; /* Máximo tamaño para pantallas grandes */
 }
 
 .titulo-inscripcion {
   font-size: 40px;
   font-weight: bold;
-  color: #2274a5; /* Puedes cambiarlo según el diseño */
+  color: #2274a5; /* Color personalizado */
   margin-bottom: 20px;
 }
 
@@ -15,20 +17,20 @@
   height: 2px; /* Alto de la barra */
   background-color: #2274a5; /* Color de la barra */
   margin-top: 20px; /* Espacio entre el contenido y la barra */
-  width: 100%; /* Hace que ocupe todo el ancho de la caja */
-  max-width: 800px; /* Se ajusta al tamaño máximo de la caja */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  max-width: 800px; /* Se ajusta al tamaño máximo */
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; /* Centrado */
 }
 
 .caja-inscripcion {
-  background-color: #7cc1f3; /* Color celeste */
+  background-color: #7cc1f3; /* Color de fondo celeste */
   color: #333;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto; /* Centrado */
   text-align: left;
   font-size: 16px;
 }
@@ -46,4 +48,45 @@
 
 .texto-inscripcion a:hover {
   text-decoration: underline;
+}
+
+/* Media queries para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+  .titulo-inscripcion {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .caja-inscripcion {
+    padding: 15px;
+  }
+
+  .texto-inscripcion {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .barra-inscripcion {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-inscripcion {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .caja-inscripcion {
+    padding: 10px;
+  }
+
+  .texto-inscripcion {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .barra-inscripcion {
+    margin-top: 15px;
+  }
 }

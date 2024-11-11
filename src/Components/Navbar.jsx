@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import "../styles/Navbar.css";
 import logo from "../assets/Escudosinfondo.png";
 
-const NavBar = ({ className }) => {
+const NavBar = ({ className, onMenuToggle }) => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    onMenuToggle(); // Llamamos a la función para desplazar el carrusel
+  };
 
   return (
     <nav className={`navbar ${className}`}>
@@ -15,7 +21,12 @@ const NavBar = ({ className }) => {
           </>
         )}
       </div>
-      <ul className="navbar-links">
+      <div className="navbar-toggle" onClick={toggleMobileMenu}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </div>
+      <ul className={`navbar-links ${isMobileMenuOpen ? "active" : ""}`}>
         <li>
           <a href="#institucional">Institucional</a>
         </li>
@@ -30,9 +41,15 @@ const NavBar = ({ className }) => {
           <a href="#niveles-educativos">Niveles Educativos</a>
           {showDropdown && (
             <ul className="dropdown-menu">
-              <li><a href="#nivel-inicial">Nivel Inicial</a></li>
-              <li><a href="#nivel-primario">Nivel Primario</a></li>
-              <li><a href="#nivel-secundario">Nivel Secundario</a></li>
+              <li>
+                <a href="#nivel-inicial">Nivel Inicial</a>
+              </li>
+              <li>
+                <a href="#nivel-primario">Nivel Primario</a>
+              </li>
+              <li>
+                <a href="#nivel-secundario">Nivel Secundario</a>
+              </li>
             </ul>
           )}
         </li>
@@ -48,6 +65,3 @@ const NavBar = ({ className }) => {
 };
 
 export default NavBar;
-
-
-

@@ -32,3 +32,43 @@ body {
   margin-right: 4px; /* Espacio entre el icono y el texto */
   margin-left: 4px;
 }
+
+/* Medias query para pantallas más pequeñas (como tablet y móvil) */
+@media (max-width: 768px) {
+  .top-bar {
+    font-size: 10px; /* Reduce el tamaño de la fuente */
+    padding: 5px 0; /* Ajusta el espaciado */
+  }
+
+  .span-topbar {
+    display: block; /* Organiza los elementos en columnas en lugar de línea */
+    text-align: center; /* Centra el texto */
+  }
+
+  .span-topbar a {
+    margin-left: 0; /* Elimina el margen entre los enlaces */
+    margin-top: 5px; /* Añade un poco de espacio entre los enlaces */
+  }
+
+  .span-topbar svg {
+    margin-right: 2px; /* Menos espacio entre los iconos y el texto */
+    margin-left: 2px;
+    font-size: 14px; /* Reduce el tamaño de los iconos */
+  }
+}
+
+/* Medias query para pantallas más pequeñas (como móviles) */
+@media (max-width: 480px) {
+  .top-bar {
+    font-size: 9px; /* Reduce aún más el tamaño de la fuente */
+  }
+
+  .span-topbar a {
+    font-size: 8px; /* Reduce el tamaño del texto en los enlaces */
+    margin-top: 3px; /* Reduce el margen superior entre los enlaces */
+  }
+
+  .span-topbar svg {
+    font-size: 12px; /* Reducción adicional en el tamaño de los iconos */
+  }
+}

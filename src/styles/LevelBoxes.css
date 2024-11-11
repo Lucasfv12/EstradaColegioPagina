@@ -1,61 +1,68 @@
+/* Contenedor de las cajas */
 .level-boxes {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap; /* Permite que las cajas se ajusten a nuevas filas cuando sea necesario */
+  gap: 10px; /* Espacio entre las cajas */
   justify-content: space-between;
   padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  .box {
-    color: white;
-    padding: 15px;
-    width: calc(100% / 4 - 10px);
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    text-align: left;
+/* Estilos para las cajas */
+.box {
+  color: white;
+  padding: 15px;
+  flex: 1 1 calc(25% - 10px); /* Distribuye las cajas de manera equitativa, dejando espacio entre ellas */
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: left;
+  box-sizing: border-box; /* Asegura que los márgenes y el padding no afecten el tamaño */
+}
 
-    &:hover {
-      transform: scale(1.03);
-    }
+.box:hover {
+  transform: scale(1.03);
+}
 
-    .logo {
-      margin-top: 15px;
-      font-size: 40px;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
+.logo {
+  margin-top: 15px;
+  font-size: 40px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 
-    .titulo-box {
-      margin-top: 70px;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 16px;
-    }
+.titulo-box {
+  margin-top: 70px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+}
 
-    .circle-button {
-      margin-top: 40px; /* Empuja el botón hacia el final de la caja */
-      align-self: flex-start;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      background-color: #ffffff;
-      color: #1f76bd;
-      font-size: 22px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      &:hover {
-        background-color: #e0e0e0;
-      }
-    }
-  }
+.circle-button {
+  margin-top: 40px; /* Empuja el botón hacia el final de la caja */
+  align-self: flex-start;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #1f76bd;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-button:hover {
+  background-color: #e0e0e0;
 }
 
 /* Colores específicos para cada caja */
@@ -70,4 +77,19 @@
 }
 .box-color4 {
   background-color: #7cc1f3;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .level-boxes {
+    flex-direction: column; /* Apilamos las cajas en una columna */
+    align-items: center; /* Centra las cajas dentro del contenedor */
+    gap: 20px; /* Espacio entre las cajas */
+  }
+
+  .box {
+    width: 90%; /* Ajustamos el ancho de las cajas a un 90% del contenedor */
+    max-width: 400px; /* Limitamos el tamaño máximo de las cajas */
+    height: auto; /* Permite que la altura se ajuste al contenido */
+  }
 }

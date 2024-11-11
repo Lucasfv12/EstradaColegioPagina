@@ -1,3 +1,4 @@
+/* src/styles/CampusCultural.scss */
 .campus-cultura-container {
   text-align: center;
   margin: 20px 0;
@@ -14,14 +15,21 @@
 
 .campus-cultura {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap; /* Permite que los ítems se acomoden en filas cuando sea necesario */
+  justify-content: center; /* Centra los ítems en el contenedor */
+  align-items: flex-start; /* Alinea los ítems al principio */
   margin-bottom: 100px;
+  padding: 0 10px; /* Añadimos algo de padding para que no toquen los bordes */
 }
 
+/* Estilo para cada ítem */
 .campus-item {
   position: relative;
-  width: 25%;
+  width: 30%; /* Hacemos que los ítems ocupen el 30% del ancho en pantallas grandes */
+  height: 250px;
+  margin: 10px; /* Espacio entre los ítems */
   overflow: hidden;
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
 }
 
 .campus-image {
@@ -37,7 +45,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen en hover */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +58,7 @@
 }
 
 .campus-item:hover .campus-image {
-  transform: scale(1.1); /* Zoom en hover */
+  transform: scale(1.1);
 }
 
 .campus-text {
@@ -59,4 +67,45 @@
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Pantallas grandes */
+@media (min-width: 1024px) {
+  .campus-item {
+    width: 30%; /* Mantener 3 ítems por fila */
+  }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+  .campus-item {
+    width: 45%; /* Los ítems ocupan un poco más de espacio en tabletas */
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .campus-item {
+    width: 95%; /* Los ítems ocupan casi todo el ancho del contenedor */
+  }
+}
+
+/* Pantallas muy pequeñas (móviles pequeños) */
+@media (max-width: 480px) {
+  .campus-title {
+    font-size: 28px; /* Reducir el tamaño del título en pantallas pequeñas */
+    margin-top: 120px; /* Menos espacio arriba */
+  }
+
+  .campus-item {
+    width: 95%; /* Los ítems ocupan casi todo el ancho del contenedor */
+    height: 200px; /* Reducir la altura de los ítems */
+    margin-bottom: 15px; /* Reducir el espacio entre los ítems */
+  }
+
+  .campus-text {
+    font-size: 16px; /* Reducir el tamaño del texto */
+  }
 }

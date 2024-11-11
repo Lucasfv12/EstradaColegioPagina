@@ -1,10 +1,10 @@
-/* Barra de navegación */
+/* Estilo base para la barra de navegación */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: transparent; /* Fondo transparente en el navbar */
+  background-color: transparent;
   position: absolute;
   top: 40px;
   left: 0;
@@ -13,13 +13,15 @@
   transition: background-color 0.3s ease, position 0.3s ease;
 }
 
+/* Cambiar fondo cuando se hace scroll */
 .navbar.scrolled {
-  background-color: white; /* Fondo blanco cuando el navbar es scrolled */
+  background-color: white;
   position: fixed;
   top: 0;
+  width: 100%; /* Aseguramos que ocupe todo el ancho */
 }
 
-/* Estilos para el contenido de la barra de navegación */
+/* Estilos para los elementos del navbar */
 .navbar-left {
   display: flex;
   align-items: center;
@@ -47,71 +49,122 @@
   position: relative;
 }
 
-/* Estilos de los enlaces principales */
+/* Estilos de los enlaces */
 .navbar-links a {
   text-decoration: none;
   color: black;
-  font-weight: bold; /* Mantener la negrita en los enlaces principales */
+  font-weight: bold;
   font-size: 14px;
   padding: 5px 10px;
-  border-radius: 5px; /* Bordes redondeados en los enlaces */
-  text-transform: uppercase; /* Convertir a mayúsculas */
+  border-radius: 5px;
+  text-transform: uppercase;
   transition: background-color 0.3s ease;
 }
 
-/* Fondo celeste solo al pasar el mouse sobre los enlaces principales */
 .navbar-links a:hover {
-  background-color: white; /* Fondo celeste solo en enlaces principales */
+  background-color: white;
 }
 
-/* Submenú de Niveles Educativos */
+/* Estilos para el menú hamburguesa */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-toggle .bar {
+  width: 25px;
+  height: 3px;
+  margin: 4px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+/* Cuando el menú de hamburguesa está activo */
+.navbar-links.active {
+  display: block;
+}
+
+/* Estilos de los submenús */
 .dropdown-container {
   position: relative;
 }
 
 .dropdown-menu {
   position: absolute;
-  background-color: transparent; /* Fondo transparente para el submenú */
-  display: none; /* Oculto por defecto */
+  background-color: transparent;
+  display: none;
   list-style: none;
   padding: 0;
   margin: 0;
   flex-direction: column;
-  width: 200px; /* Ancho adecuado para el submenú */
-  top: 100%; /* Ubica el submenú justo debajo del enlace */
+  width: 200px;
+  top: 100%;
   left: 0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1;
-  border-radius: 5px; /* Bordes redondeados para el submenú */
-  overflow: hidden; /* Evita que el contenido se desborde */
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 /* Muestra el submenú cuando pasa el mouse */
 .dropdown-container:hover .dropdown-menu {
   display: block;
-  background-color: #60b9f8; /* Fondo celeste para todo el submenú */
+  background-color: #60b9f8;
 }
 
-/* Estilo de cada elemento en el submenú */
 .dropdown-menu li {
   padding: 8px 15px;
   transition: background-color 0.3s ease;
-  background-color: transparent; /* Fondo transparente por defecto */
-  width: 100%; /* Asegura que los elementos ocupen todo el ancho del contenedor */
+  background-color: transparent;
+  width: 100%;
 }
 
-/* Fondo celeste solo al pasar el mouse sobre los elementos del submenú */
+/* Fondo al pasar el mouse sobre los elementos del submenú */
 .dropdown-menu li:hover {
-  background-color: #60b9f8; /* Fondo celeste en el submenú */
+  background-color: #60b9f8;
 }
 
-/* Enlaces dentro del submenú */
 .dropdown-menu li a {
   color: black;
   text-decoration: none;
   font-size: 14px;
   display: block;
   width: 100%;
-  font-weight: normal; /* Elimina la negrita en los enlaces del submenú */
-  text-transform: none; /* Elimina las mayúsculas en los enlaces del submenú */
+  font-weight: normal;
+  text-transform: none;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    padding: 20px 0;
+    position: absolute;
+    top: 60px; /* Ajustamos para que se vea debajo del navbar */
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-links.active {
+    display: block;
+  }
+
+  .navbar-links li {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .navbar-links a {
+    display: block;
+    width: 100%;
+  }
 }

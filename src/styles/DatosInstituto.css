@@ -1,3 +1,4 @@
+/* src/styles/DatosInstituto.scss */
 .datos-instituto-container {
   position: relative;
   padding: 50px 0;
@@ -18,7 +19,9 @@
 
 .info-box {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap; /* Permite que los ítems se acomoden en filas cuando sea necesario */
+  justify-content: center; /* Centra los ítems horizontalmente */
+  align-items: center; /* Centra los ítems verticalmente */
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -26,10 +29,12 @@
 
 .dato {
   text-align: center;
-  width: 30%;
+  width: 30%; /* Asegura que los datos ocupen solo el 30% del ancho en pantallas grandes */
+  margin: 10px; /* Espacio pequeño entre los elementos */
   display: flex;
-  flex-direction: column; /* Apilar los elementos en columna */
-  align-items: center; /* Centrar los elementos */
+  flex-direction: column; /* Asegura que los íconos y textos estén apilados */
+  align-items: center; /* Centra los íconos y el texto */
+  box-sizing: border-box; /* Asegura que el margen no afecte el tamaño */
 }
 
 .dato i {
@@ -48,4 +53,62 @@
   font-size: 80px; /* Aumentamos el tamaño del número */
   font-weight: bold;
   margin-top: 10px;
+}
+
+/* Media queries para dispositivos móviles y tabletas */
+
+/* Pantallas grandes */
+@media (min-width: 1024px) {
+  .dato {
+    width: 30%; /* Los ítems ocupan el 30% del contenedor, 3 por fila */
+  }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+  .info-box {
+    width: 90%; /* Los ítems ocupan más espacio */
+  }
+
+  .dato {
+    width: 45%; /* Los ítems ocupan el 45% del ancho en pantallas medianas */
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .dato i {
+    font-size: 60px; /* Reducir el tamaño del ícono */
+  }
+
+  .dato p {
+    font-size: 30px; /* Reducir el tamaño del texto */
+  }
+
+  .dato .countup {
+    font-size: 60px; /* Reducir el tamaño del número */
+  }
+
+  .dato {
+    width: 90%; /* Los ítems ocupan el 90% del contenedor */
+  }
+}
+
+/* Pantallas muy pequeñas (móviles pequeños) */
+@media (max-width: 480px) {
+  .dato {
+    width: 95%; /* Los ítems ocupan casi todo el ancho del contenedor */
+  }
+
+  .dato i {
+    font-size: 50px; /* Reducir aún más el tamaño del ícono */
+  }
+
+  .dato p {
+    font-size: 25px; /* Reducir el tamaño del texto */
+  }
+
+  .dato .countup {
+    font-size: 50px; /* Reducir el tamaño del número */
+  }
 }

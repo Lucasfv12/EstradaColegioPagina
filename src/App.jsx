@@ -12,6 +12,7 @@ import CampusCultura from "./Components/CampusCultura";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para abrir/cerrar el menú
   const inscripcionRef = useRef(null);
 
   const handleScroll = () => {
@@ -21,6 +22,10 @@ function App() {
     } else if (inscripcionPosition.top > 0 && scrolled) {
       setScrolled(false);
     }
+  };
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen); // Alternar el estado del menú
   };
 
   useEffect(() => {
@@ -33,8 +38,13 @@ function App() {
   return (
     <div>
       <TopBar />
-      <NavBar className={scrolled ? "scrolled" : ""} />
-      <CarouselComponent />
+      <NavBar
+        className={scrolled ? "scrolled" : ""}
+        onMenuToggle={handleMenuToggle}
+      />
+      <div className={`carousel-container ${isMenuOpen ? "menu-open" : ""}`}>
+        <CarouselComponent />
+      </div>
       <LevelBoxes />
       <Inscripcion2025 ref={inscripcionRef} />
       <FormularioCarteles />

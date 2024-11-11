@@ -5,6 +5,7 @@
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 50px;
+  flex-wrap: wrap; /* Permite que los carteles se acomoden en varias filas */
 }
 
 .cartel {
@@ -24,4 +25,32 @@
 
 .cartel p {
   margin: 0;
+}
+
+/* Media queries para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+  .formulario-carteles {
+    flex-direction: column; /* Apilar los carteles verticalmente */
+    gap: 15px; /* Reducir el espacio entre los carteles */
+    align-items: center; /* Centrar los carteles */
+  }
+
+  .cartel {
+    width: 80%; /* Los carteles ocupan el 80% del ancho del contenedor */
+    max-width: 350px; /* Máximo ancho ajustado */
+    height: 150px; /* Mantener la altura constante */
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario-carteles {
+    gap: 10px; /* Menos espacio entre carteles en pantallas más pequeñas */
+  }
+
+  .cartel {
+    width: 90%; /* Los carteles ocupan el 90% del ancho del contenedor */
+    max-width: 300px; /* Máximo ancho ajustado */
+    height: 130px; /* Mantener la altura constante */
+    font-size: 16px; /* Reducir el tamaño de la fuente para pantallas pequeñas */
+  }
 }
