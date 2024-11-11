@@ -1,4 +1,6 @@
+// src/App.js
 import React, { useEffect, useState, useRef } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopBar from "./Components/TopBar";
 import CarouselComponent from "./Components/CarouselComponent";
 import LevelBoxes from "./Components/LevelBoxes";
@@ -9,10 +11,10 @@ import Footer from "./Components/Footer";
 import FormularioCarteles from "./Components/FormularioCarteles";
 import DatosInstituto from "./Components/DatosInstituto";
 import CampusCultura from "./Components/CampusCultura";
+import NivelInicial from "./Components/Pages/NivelInicial/NivelInicial";
 
-function App() {
+function Home() {
   const [scrolled, setScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para abrir/cerrar el menú
   const inscripcionRef = useRef(null);
 
   const handleScroll = () => {
@@ -22,10 +24,6 @@ function App() {
     } else if (inscripcionPosition.top > 0 && scrolled) {
       setScrolled(false);
     }
-  };
-
-  const handleMenuToggle = () => {
-    setIsMenuOpen(!isMenuOpen); // Alternar el estado del menú
   };
 
   useEffect(() => {
@@ -38,13 +36,8 @@ function App() {
   return (
     <div>
       <TopBar />
-      <NavBar
-        className={scrolled ? "scrolled" : ""}
-        onMenuToggle={handleMenuToggle}
-      />
-      <div className={`carousel-container ${isMenuOpen ? "menu-open" : ""}`}>
-        <CarouselComponent />
-      </div>
+      <NavBar className={scrolled ? "scrolled" : ""} />
+      <CarouselComponent />
       <LevelBoxes />
       <Inscripcion2025 ref={inscripcionRef} />
       <FormularioCarteles />
@@ -52,6 +45,18 @@ function App() {
       <DatosInstituto />
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/nivel-inicial" element={<NivelInicial />} />
+        {/* Agrega aquí más rutas para otras páginas */}
+      </Routes>
+    </Router>
   );
 }
 

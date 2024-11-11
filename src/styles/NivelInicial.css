@@ -1,0 +1,11 @@
+/* src/styles/NivelInicial.css */
+
+/* Estilo para el header */
+.nivel-inicial-header {
+  background-color: red; /* Fondo rojo */
+  color: white; /* Texto en blanco */
+  text-align: center; /* Centrar el texto */
+  padding: 20px 0; /* Espaciado arriba y abajo */
+  font-size: 2rem; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+}

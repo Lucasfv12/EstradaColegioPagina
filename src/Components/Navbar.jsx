@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Navbar.css";
 import logo from "../assets/Escudosinfondo.png";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ className, onMenuToggle }) => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -42,7 +43,7 @@ const NavBar = ({ className, onMenuToggle }) => {
           {showDropdown && (
             <ul className="dropdown-menu">
               <li>
-                <a href="#nivel-inicial">Nivel Inicial</a>
+                <Link to="/nivel-inicial">Nivel Inicial</Link>
               </li>
               <li>
                 <a href="#nivel-primario">Nivel Primario</a>
