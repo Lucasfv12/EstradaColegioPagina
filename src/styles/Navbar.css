@@ -1,9 +1,10 @@
+/* Barra de navegación */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: transparent; /* Fondo transparente en el navbar */
   position: absolute;
   top: 40px;
   left: 0;
@@ -13,18 +14,19 @@
 }
 
 .navbar.scrolled {
-  background-color: white;
+  background-color: white; /* Fondo blanco cuando el navbar es scrolled */
   position: fixed;
   top: 0;
 }
 
+/* Estilos para el contenido de la barra de navegación */
 .navbar-left {
   display: flex;
   align-items: center;
 }
 
 .navbar-logo {
-  width: 40px; /* Ajusta el tamaño del logo */
+  width: 40px;
   height: auto;
   margin-right: 10px;
 }
@@ -42,17 +44,74 @@
 }
 
 .navbar-links li {
-  display: inline;
+  position: relative;
 }
 
+/* Estilos de los enlaces principales */
 .navbar-links a {
   text-decoration: none;
   color: black;
-  text-transform: uppercase;
-  font-weight: bold;
+  font-weight: bold; /* Mantener la negrita en los enlaces principales */
   font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px; /* Bordes redondeados en los enlaces */
+  text-transform: uppercase; /* Convertir a mayúsculas */
+  transition: background-color 0.3s ease;
 }
 
+/* Fondo celeste solo al pasar el mouse sobre los enlaces principales */
 .navbar-links a:hover {
-  text-decoration: underline;
+  background-color: white; /* Fondo celeste solo en enlaces principales */
+}
+
+/* Submenú de Niveles Educativos */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background-color: transparent; /* Fondo transparente para el submenú */
+  display: none; /* Oculto por defecto */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  width: 200px; /* Ancho adecuado para el submenú */
+  top: 100%; /* Ubica el submenú justo debajo del enlace */
+  left: 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 5px; /* Bordes redondeados para el submenú */
+  overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+/* Muestra el submenú cuando pasa el mouse */
+.dropdown-container:hover .dropdown-menu {
+  display: block;
+  background-color: #60b9f8; /* Fondo celeste para todo el submenú */
+}
+
+/* Estilo de cada elemento en el submenú */
+.dropdown-menu li {
+  padding: 8px 15px;
+  transition: background-color 0.3s ease;
+  background-color: transparent; /* Fondo transparente por defecto */
+  width: 100%; /* Asegura que los elementos ocupen todo el ancho del contenedor */
+}
+
+/* Fondo celeste solo al pasar el mouse sobre los elementos del submenú */
+.dropdown-menu li:hover {
+  background-color: #60b9f8; /* Fondo celeste en el submenú */
+}
+
+/* Enlaces dentro del submenú */
+.dropdown-menu li a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  font-weight: normal; /* Elimina la negrita en los enlaces del submenú */
+  text-transform: none; /* Elimina las mayúsculas en los enlaces del submenú */
 }

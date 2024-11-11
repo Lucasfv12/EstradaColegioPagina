@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Navbar.css";
-import logo from "../assets/Escudosinfondo.png"; // Asegúrate de que la ruta sea correcta
+import logo from "../assets/Escudosinfondo.png";
 
 const NavBar = ({ className }) => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
   return (
     <nav className={`navbar ${className}`}>
       <div className="navbar-left">
@@ -20,8 +22,19 @@ const NavBar = ({ className }) => {
         <li>
           <a href="#administracion">Administración</a>
         </li>
-        <li>
+        <li
+          className="dropdown-container"
+          onMouseEnter={() => setShowDropdown(true)}
+          onMouseLeave={() => setShowDropdown(false)}
+        >
           <a href="#niveles-educativos">Niveles Educativos</a>
+          {showDropdown && (
+            <ul className="dropdown-menu">
+              <li><a href="#nivel-inicial">Nivel Inicial</a></li>
+              <li><a href="#nivel-primario">Nivel Primario</a></li>
+              <li><a href="#nivel-secundario">Nivel Secundario</a></li>
+            </ul>
+          )}
         </li>
         <li>
           <a href="#pastoral">Pastoral</a>
@@ -35,3 +48,6 @@ const NavBar = ({ className }) => {
 };
 
 export default NavBar;
+
+
+
