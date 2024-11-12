@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Navbar.css";
 import logo from "../assets/Escudosinfondo.png";
 import { Link } from "react-router-dom";
@@ -8,8 +10,7 @@ const NavBar = ({ className, onMenuToggle }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    onMenuToggle(); // Llamamos a la función para desplazar el carrusel
+    setIsMobileMenuOpen(!isMobileMenuOpen); // Sólo abre/cierra el menú móvil
   };
 
   return (
@@ -23,9 +24,8 @@ const NavBar = ({ className, onMenuToggle }) => {
         )}
       </div>
       <div className="navbar-toggle" onClick={toggleMobileMenu}>
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
+        {/* Aquí hemos reemplazado las barras con FontAwesome */}
+        <FontAwesomeIcon icon={faBars} size="2x" />
       </div>
       <ul className={`navbar-links ${isMobileMenuOpen ? "active" : ""}`}>
         <li>

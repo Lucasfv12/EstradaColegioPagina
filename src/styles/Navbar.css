@@ -18,7 +18,7 @@
   background-color: white;
   position: fixed;
   top: 0;
-  width: 100%; /* Aseguramos que ocupe todo el ancho */
+  width: 100%;
 }
 
 /* Estilos para los elementos del navbar */
@@ -67,17 +67,14 @@
 
 /* Estilos para el menú hamburguesa */
 .navbar-toggle {
-  display: none;
-  flex-direction: column;
   cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar-toggle .bar {
-  width: 25px;
-  height: 3px;
-  margin: 4px;
-  background-color: black;
-  border-radius: 5px;
+.navbar-toggle .fa-bars {
+  color: #000; /* Cambia el color si lo necesitas */
 }
 
 /* Cuando el menú de hamburguesa está activo */
@@ -120,7 +117,6 @@
   width: 100%;
 }
 
-/* Fondo al pasar el mouse sobre los elementos del submenú */
 .dropdown-menu li:hover {
   background-color: #60b9f8;
 }
@@ -137,14 +133,23 @@
 
 /* Responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
+  .navbar.scrolled {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
   .navbar-links {
     display: none;
     width: 100%;
-    text-align: center;
+    text-align: center; /* Centra el texto del menú desplegable */
     background-color: white;
     padding: 20px 0;
     position: absolute;
-    top: 60px; /* Ajustamos para que se vea debajo del navbar */
+    top: 50px; /* Ajustamos para que se vea debajo del navbar */
     left: 0;
     right: 0;
     z-index: 10;
@@ -152,6 +157,7 @@
 
   .navbar-toggle {
     display: flex;
+    justify-content: space-around;
   }
 
   .navbar-links.active {
@@ -161,10 +167,18 @@
   .navbar-links li {
     width: 100%;
     padding: 10px 0;
+    text-align: center; /* Centra cada elemento de la lista */
   }
 
   .navbar-links a {
     display: block;
     width: 100%;
+    text-align: center; /* Centra el texto en cada enlace */
   }
 }
+
+.navbar-text {
+  display: none;
+}
+
+/* Cambiar fondo cuando se hace scroll */
