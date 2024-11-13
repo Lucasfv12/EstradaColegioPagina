@@ -1,0 +1,83 @@
+/* Título de la galería */
+.gallery-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  margin-top: 30px; /* Agregado margen superior */
+}
+
+/* Galería principal */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+  gap: 20px; /* Aumento del espacio entre las imágenes */
+  margin: 40px auto; /* Márgenes de arriba y abajo */
+  max-width: 90%; /* Limitar el tamaño de la galería */
+}
+
+/* Card para cada imagen */
+.photo-card {
+  width: 100%;
+  height: 150px; /* Tamaño fijo para las imágenes miniatura */
+  overflow: hidden;
+}
+
+/* Imagen dentro de la card */
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+
+  cursor: pointer; /* Añadimos cursor de puntero para indicar que es clickeable */
+}
+
+/* Estilos para el modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+/* Contenedor del contenido del modal */
+.modal-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%; /* Limitar el ancho máximo */
+  max-height: 80%; /* Limitar la altura máxima */
+  padding: 10px;
+  overflow: hidden;
+  /* Eliminamos el fondo blanco */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  color: #ffffff; /* Color blanco para la cruz */
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 11; /* Asegurarse de que esté sobre la imagen */
+  outline: none; /* Eliminar el contorno que aparece al hacer clic */
+}
+
+/* Imagen dentro del modal */
+.modal-content img {
+  width: 100%;
+  height: auto;
+  max-width: 90%; /* La imagen será más pequeña */
+  max-height: 80vh; /* Limitar la altura para que se vea completa */
+  object-fit: contain; /* Asegura que la imagen se muestre sin deformarse */
+}

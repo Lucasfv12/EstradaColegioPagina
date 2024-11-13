@@ -11,6 +11,9 @@ import {
   faCalendar,
   faArrowsAlt,
 } from "@fortawesome/free-solid-svg-icons"; // Importa los íconos necesarios de FontAwesome
+import EducationalInfoSection from "./EducationalInfoSection";
+import PropuestaPedagogica from "./PropuestaPedagogica";
+import Gallery from "./Gallery";
 
 function NivelInicial() {
   return (
@@ -18,13 +21,17 @@ function NivelInicial() {
       <TopBar />
       <NavBar />
 
+      {/* Header rojo con el texto "Nivel Inicial" */}
+      <div className="nivel-inicial-header">
+        <h1>NIVEL INICIAL</h1>
+      </div>
+
       {/* Sección de imagen de fondo con el mensaje */}
       <div className="nivel-inicial-banner">
         <div className="banner-message">
           <h1>
             CONSIDERAMOS A LA PRIMERA INFANCIA COMO EL PERIODO CLAVE EN LA
-            HISTORIA DE CADA NIÑO QUE GENERARÁ HUELLAS RELEVANTES PARA SU
-            TRAYECTORIA PERSONAL Y EDUCATIVA FUTURA
+            HISTORIA DE CADA NIÑO
           </h1>
         </div>
       </div>
@@ -58,6 +65,10 @@ function NivelInicial() {
           </div>
         </div>
       </section>
+
+      <EducationalInfoSection />
+      <PropuestaPedagogica />
+      <Gallery />
 
       <Footer />
     </div>

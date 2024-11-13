@@ -1,5 +1,27 @@
 /* src/styles/NivelInicial.css */
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+/* Header rojo */
+.nivel-inicial-header {
+  background-color: #ff6f61; /* Rojo */
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+  text-transform: uppercase;
+  /* Añadir espacio para separar del NavBar fijo */
+  margin-bottom: 20px;
+}
+
+.nivel-inicial-header h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
 /* Banner de imagen de fondo */
 .nivel-inicial-banner {
   background-image: url("/images/Jardin.png"); /* Asegúrate de especificar la ruta de la imagen */
@@ -7,21 +29,46 @@
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 400px; /* Ajusta la altura según tu diseño */
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
   padding: 20px;
+  position: relative; /* Asegura que el pseudo-elemento se coloque correctamente */
+}
+
+/* Superposición oscura */
+.nivel-inicial-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Ajusta la opacidad según tu preferencia */
+  z-index: 1; /* Coloca la superposición detrás del texto */
+}
+
+/* Asegura que el texto esté encima de la superposición */
+.banner-message {
+  position: relative;
+  z-index: 2;
 }
 
 .banner-message h1 {
-  font-size: 1.8rem;
+  font-size: 45px;
   font-weight: bold;
   text-transform: uppercase;
   max-width: 80%;
   margin: 0 auto;
+  margin-top: 80px;
 }
 
 /* Sección de Información Especial */

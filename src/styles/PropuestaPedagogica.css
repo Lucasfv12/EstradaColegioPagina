@@ -1,0 +1,49 @@
+/* src/styles/PropuestaPedagogica.css */
+
+.propuesta-pedagogica {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f8fc; /* Color de fondo suave */
+  padding: 50px 20px;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 1200px; /* Limita el tamaño máximo */
+  flex-direction: row;
+}
+
+.image {
+  max-width: 400px; /* Tamaño máximo de la imagen */
+  height: auto;
+  margin-right: 30px; /* Espacio entre la imagen y el texto */
+  position: relative; /* Necesario para colocar el pseudo-elemento encima */
+}
+
+.image::before {
+  content: ""; /* Es necesario para crear un pseudo-elemento vacío */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.753); /* Fondo oscuro semitransparente */
+  z-index: 3; /* Asegura que el filtro esté encima de la imagen */
+}
+
+.text {
+  max-width: 700px; /* Limita el ancho del texto */
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.text h3 {
+  font-size: 1.8rem;
+  color: #ff6f61; /* Color del encabezado */
+  margin-bottom: 20px;
+}
