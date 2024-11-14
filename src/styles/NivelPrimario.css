@@ -1,0 +1,92 @@
+/* src/styles/NivelPrimario.css */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+.nivel-primario-header {
+  background-color: #e15554; /* Usa un color relacionado, o uno diferente para distinguirlo */
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.nivel-primario-header h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.nivel-primario-banner {
+  background-image: url("/public/images/Primaria.jpg"); /* Puedes cambiar la imagen para reflejar el nivel primario */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  position: relative; /* Asegura que el pseudo-elemento se coloque correctamente */
+}
+
+.nivel-primario-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Ajusta la opacidad según tu preferencia */
+  z-index: 1; /* Coloca la superposición detrás del texto */
+}
+
+.banner-message h1 {
+  font-size: 45px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.nivel-primario-info {
+  background-color: #f4f4f4;
+  padding: 40px;
+  text-align: center;
+}
+
+.info-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  background-color: #a9bcd0;
+  color: #333;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.info-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.info-icon {
+  font-size: 2rem;
+  color: #58a4b0;
+}

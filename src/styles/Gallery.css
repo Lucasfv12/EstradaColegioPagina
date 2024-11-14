@@ -17,6 +17,34 @@
   max-width: 90%; /* Limitar el tamaño de la galería */
 }
 
+/* Flechas de navegación */
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 11;
+  outline: none;
+}
+
+.prev-btn {
+  left: 15px; /* Posición de la flecha izquierda */
+}
+
+.next-btn {
+  right: 15px; /* Posición de la flecha derecha */
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  color: #e0e0e0; /* Cambio de color al pasar el mouse */
+}
+
 /* Card para cada imagen */
 .photo-card {
   width: 100%;

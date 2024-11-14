@@ -20,38 +20,71 @@ const photos = [
 ];
 
 function Gallery() {
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
 
-  const handleClick = (photo) => {
-    setSelectedPhoto(photo);
+  const handleClick = (index) => {
+    setSelectedPhotoIndex(index);
   };
 
   const handleCloseModal = () => {
-    setSelectedPhoto(null);
+    setSelectedPhotoIndex(null);
+  };
+
+  const handleNext = () => {
+    if (selectedPhotoIndex < photos.length - 1) {
+      setSelectedPhotoIndex(selectedPhotoIndex + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (selectedPhotoIndex > 0) {
+      setSelectedPhotoIndex(selectedPhotoIndex - 1);
+    }
   };
 
   return (
     <div>
-      <h2 className="gallery-title">Galería de fotos</h2>{" "}
-      {/* Título de la galería */}
+      <h2 className="gallery-title">Galería de fotos</h2>
       <div className="gallery">
         {photos.map((photo, index) => (
           <div
             key={index}
             className="photo-card"
-            onClick={() => handleClick(photo)}
+            onClick={() => handleClick(index)}
           >
             <img src={photo} alt={`actividad ${index + 1}`} className="photo" />
           </div>
         ))}
       </div>
-      {selectedPhoto && (
+      {selectedPhotoIndex !== null && (
         <div className="modal" onClick={handleCloseModal}>
-          <div className="modal-content">
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={handleCloseModal}>
               ×
             </button>
-            <img src={selectedPhoto} alt="Selected" />
+            <img src={photos[selectedPhotoIndex]} alt="Selected" />
+            {selectedPhotoIndex > 0 && (
+              <button
+                className="prev-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handlePrevious();
+                }}
+              >
+                ‹
+              </button>
+            )}
+            {selectedPhotoIndex < photos.length - 1 && (
+              <button
+                className="next-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleNext();
+                }}
+              >
+                ›
+              </button>
+            )}
           </div>
         </div>
       )}

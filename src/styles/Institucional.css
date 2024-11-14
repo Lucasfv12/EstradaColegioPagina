@@ -1,0 +1,79 @@
+/* src/styles/Institucional.css */
+
+.institucional-header {
+  background-color: #58a4b0; /* Gris claro */
+  color: white;
+  text-align: center;
+  padding: 100px;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 30px 0;
+  margin-top: 20px;
+}
+
+.autoridades-section,
+.nivel-secundario-section,
+.nivel-primario-section,
+.nivel-inicial-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.autoridades-boxes,
+.nivel-secundario-boxes,
+.nivel-primario-boxes,
+.nivel-inicial-boxes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.autoridad-box,
+.nivel-box {
+  background-color: #a9bcd0;
+  color: #333;
+  padding: 20px;
+  margin-bottom: 50px;
+  width: 200px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease; /* Añade transición suave */
+}
+
+/* Efecto hover */
+.autoridad-box:hover,
+.nivel-box:hover {
+  transform: translateY(-10px); /* Eleva la caja */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más grande */
+  background-color: #8eb5c1; /* Cambio de color */
+}
+
+.autoridad-box p,
+.nivel-box p {
+  margin: 5px 0;
+}
+
+.cargo {
+  font-weight: normal;
+  color: #505f73; /* Color más suave para los cargos */
+}
+
+p {
+  color: #373f51;
+}

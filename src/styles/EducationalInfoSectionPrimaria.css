@@ -1,0 +1,68 @@
+/* src/styles/EducationalInfoSectionPrimaria.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+.educational-info-section-primaria {
+  background-color: #f3e1b1; /* Un color pastel para el nivel primario */
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido */
+  overflow: hidden; /* Limita el contenido para evitar desbordamiento */
+}
+
+.info-item-primaria {
+  display: flex;
+  align-items: flex-start; /* Alinea las barras en la parte superior de los textos */
+  margin-bottom: 40px; /* Aumenta el espacio entre los items */
+  opacity: 0;
+  transform: translateX(100vw); /* Parte desde el margen derecho */
+  animation: slideInPrimaria 2s ease-out forwards; /* Animación más lenta */
+  width: 80%; /* Limita el ancho del item */
+  max-width: 800px; /* Maximo ancho de los items */
+}
+
+.info-item-primaria:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.info-item-primaria:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Fija la altura para las barras para que queden alineadas */
+.info-bar-primaria {
+  width: 4px;
+  height: 150px; /* Ajusta según la altura del contenido más largo */
+  background-color: #ff8c42; /* Un color naranja para las barras */
+  margin-right: 30px; /* Mayor separación del texto */
+}
+
+/* Establece un ancho fijo para alinear los encabezados y las barras */
+.info-item-primaria h3 {
+  font-size: 1.5rem;
+  color: #ff8c42; /* Un color naranja para los títulos */
+  margin: 0;
+  margin-right: 30px; /* Mayor separación del texto */
+  width: 200px; /* Alinea todos los encabezados a la misma distancia */
+}
+
+.info-item-primaria p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0;
+}
+
+/* Animación ajustada para el efecto */
+@keyframes slideInPrimaria {
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Termina en su posición original */
+  }
+}

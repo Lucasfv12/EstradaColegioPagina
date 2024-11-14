@@ -29,7 +29,10 @@ const NavBar = ({ className, onMenuToggle }) => {
       </div>
       <ul className={`navbar-links ${isMobileMenuOpen ? "active" : ""}`}>
         <li>
-          <a href="#institucional">Institucional</a>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/institucional">Institucional</Link>
         </li>
         <li>
           <a href="#administracion">Administración</a>
@@ -46,7 +49,7 @@ const NavBar = ({ className, onMenuToggle }) => {
                 <Link to="/nivel-inicial">Nivel Inicial</Link>
               </li>
               <li>
-                <a href="#nivel-primario">Nivel Primario</a>
+                <Link to="/nivel-primario">Nivel Primario</Link>
               </li>
               <li>
                 <a href="#nivel-secundario">Nivel Secundario</a>

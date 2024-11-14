@@ -1,4 +1,3 @@
-// src/Components/PropuestaPedagogica.js
 import React from "react";
 import "../../../styles/PropuestaPedagogica.css";
 
@@ -54,21 +53,23 @@ function PropuestaPedagogica() {
               aquí se imparte. Los Padres deben recordar que son los primeros y
               principales educadores y que la escuela colabora con ellos en la
               formación de sus hijos pero no los suple y es por eso que deberán:
-              <ul>
-                <li>
-                  Ser coherentes con la decisión que han tomado al elegirnos
-                  como Centro Educativo, respetando las reglas institucionales.
-                </li>
-                <li>
-                  Cumplimentar con toda la documentación requerida devolviéndola
-                  en tiempo y forma.
-                </li>
-                <li>
-                  Concurriendo cada vez que sean citados y de ser necesario
-                  conversar con la docente o con dirección solicitar entrevista
-                  a través del cuaderno de comunicaciones.
-                </li>
-              </ul>
+            </p>
+            <ul>
+              <li>
+                Ser coherentes con la decisión que han tomado al elegirnos como
+                Centro Educativo, respetando las reglas institucionales.
+              </li>
+              <li>
+                Cumplimentar con toda la documentación requerida devolviéndola
+                en tiempo y forma.
+              </li>
+              <li>
+                Concurrir cada vez que sean citados y, de ser necesario,
+                conversar con la docente o con dirección solicitando entrevista
+                a través del cuaderno de comunicaciones.
+              </li>
+            </ul>
+            <p>
               Las normas son esenciales para organizar y armonizar la
               convivencia en una Institución, ya que posibilita que cada uno de
               sus integrantes conozca sus derechos pero también sus
