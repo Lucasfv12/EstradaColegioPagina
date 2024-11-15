@@ -47,3 +47,27 @@
   color: #ff6f61; /* Color del encabezado */
   margin-bottom: 20px;
 }
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Hace que el contenedor ocupe todo el ancho disponible */
+  }
+
+  .image {
+    max-width: 100%; /* Permite que la imagen ocupe todo el ancho disponible */
+    margin-right: 0;
+    margin-bottom: 20px; /* Espacio inferior cuando la imagen está encima del texto */
+  }
+
+  .text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .text h3 {
+    font-size: 1.5rem;
+  }
+}

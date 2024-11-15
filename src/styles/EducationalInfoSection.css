@@ -66,3 +66,30 @@ body {
     transform: translateX(0); /* Termina en su posición original */
   }
 }
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .info-item-bis {
+    flex-direction: column; /* Apila barras y texto en pantallas pequeñas */
+    align-items: center; /* Centra el contenido */
+    width: 90%; /* Reducción del ancho en pantallas más pequeñas */
+    margin-bottom: 20px; /* Reduce la separación entre items */
+  }
+
+  .info-bar-bis {
+    width: 80%; /* Cambia a barra horizontal ocupando el ancho */
+    height: 10px; /* Reduce la altura de la barra */
+    margin-right: 0; /* Elimina el margen derecho */
+    margin-bottom: 10px; /* Añade espacio debajo de la barra */
+  }
+
+  .info-item-bis h3 {
+    font-size: 1.3rem;
+    text-align: center; /* Centra el texto */
+  }
+
+  .info-item-bis p {
+    font-size: 0.9rem;
+    text-align: center; /* Centra el texto */
+  }
+}
