@@ -4,11 +4,11 @@ import "../styles/CarouselComponent.css";
 const CarouselComponent = () => {
   const images = [
     {
-      src: "./images/imagen1conescudo.png",
+      src: "./images/imagen1conescudo.webp",
       alt: ["BIENVENIDOS", "AL INSTITUTO JOSÉ MANUEL ESTRADA"],
     },
-    { src: "./images/Jardin.png", alt: "Segunda imagen" },
-    { src: "./images/imagen1conescudo.png", alt: "Tercera imagen" },
+    { src: "./images/Jardin.webp", alt: "Segunda imagen" },
+    { src: "./images/entrada.jpg", alt: "Tercera imagen" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

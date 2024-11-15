@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  box-sizing: border-box; /* Asegura que el padding/margin no rompa el diseño */
 }
 
 .nivel-primario-header {
@@ -20,19 +21,21 @@ body {
 }
 
 .nivel-primario-banner {
-  background-image: url("/public/images/Primaria.jpg"); /* Puedes cambiar la imagen para reflejar el nivel primario */
+  background-image: url("/images/Primaria.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 100vw; /* Cambiar de 100% a 100vw para usar todo el ancho de la ventana */
+  max-width: 100%; /* Previene desbordamientos adicionales */
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  padding: 20px;
-  position: relative; /* Asegura que el pseudo-elemento se coloque correctamente */
+  padding: 20px; /* Ajusta si es necesario */
+  position: relative;
+  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
 .nivel-primario-banner::before {
@@ -89,4 +92,52 @@ body {
 .info-icon {
   font-size: 2rem;
   color: #58a4b0;
+}
+
+/* Estilos generales para móviles */
+
+@media (max-width: 767px) {
+  .nivel-primario-header h1 {
+    font-size: 2rem; /* Reduce el tamaño de fuente */
+    padding: 50px 0; /* Reduce el padding */
+  }
+
+  .nivel-primario-banner {
+    height: 250px; /* Reduce la altura */
+    padding: 10px; /* Ajusta el padding */
+  }
+
+  .banner-message h1 {
+    font-size: 1.5rem; /* Reduce el tamaño de fuente */
+  }
+
+  .info-items {
+    flex-direction: column; /* Apila los elementos */
+    align-items: center;
+  }
+
+  .info-item {
+    width: 90%; /* Ocupa casi todo el ancho */
+    margin-bottom: 20px; /* Añade separación entre items */
+  }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nivel-primario-header h1 {
+    font-size: 3rem; /* Ajusta el tamaño de fuente */
+  }
+
+  .nivel-primario-banner {
+    height: 300px; /* Ajusta la altura */
+  }
+
+  .info-items {
+    flex-wrap: wrap; /* Permite un diseño en dos columnas */
+  }
+
+  .info-item {
+    width: 45%; /* Ocupa casi la mitad del ancho */
+    margin-bottom: 20px; /* Añade separación entre filas */
+  }
 }

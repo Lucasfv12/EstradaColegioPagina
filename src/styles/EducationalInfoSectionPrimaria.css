@@ -66,3 +66,50 @@ body {
     transform: translateX(0); /* Termina en su posición original */
   }
 }
+
+/* Estilos generales para móviles */
+@media (max-width: 767px) {
+  .educational-info-section-primaria {
+    padding: 20px; /* Reduce el padding */
+  }
+
+  .info-item-primaria {
+    flex-direction: column; /* Apila barras y texto */
+    align-items: center; /* Centra el contenido */
+    width: 100%; /* Ocupa todo el ancho */
+    margin-bottom: 20px; /* Reduce la separación entre items */
+  }
+
+  .info-bar-primaria {
+    width: 80%; /* Reduce el ancho de la barra */
+    height: 10px; /* Cambia a una barra horizontal */
+    margin: 0 0 10px 0; /* Ajusta el margen */
+  }
+
+  .info-item-primaria h3 {
+    margin-right: 0; /* Elimina la separación lateral */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 10px; /* Añade espacio debajo del título */
+  }
+
+  .info-item-primaria p {
+    text-align: center; /* Centra el texto */
+    font-size: 0.9rem; /* Reduce el tamaño de fuente */
+  }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .educational-info-section-primaria {
+    padding: 30px; /* Ajusta el padding */
+  }
+
+  .info-item-primaria {
+    width: 90%; /* Ajusta el ancho */
+    margin-bottom: 30px; /* Espacio entre items */
+  }
+
+  .info-bar-primaria {
+    height: 120px; /* Ajusta la altura de la barra */
+  }
+}

@@ -1,7 +1,5 @@
-/* src/styles/Institucional.css */
-
 .institucional-header {
-  background-color: #58a4b0; /* Gris claro */
+  background-color: #58a4b0;
   color: white;
   text-align: center;
   padding: 100px;
@@ -18,7 +16,6 @@ h2 {
   font-size: 30px;
   font-weight: bold;
   margin: 30px 0;
-  margin-top: 20px;
 }
 
 .autoridades-section,
@@ -53,15 +50,15 @@ h2 {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 16px;
   font-weight: bold;
-  transition: all 0.3s ease; /* Añade transición suave */
+  transition: all 0.3s ease;
 }
 
 /* Efecto hover */
 .autoridad-box:hover,
 .nivel-box:hover {
-  transform: translateY(-10px); /* Eleva la caja */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más grande */
-  background-color: #8eb5c1; /* Cambio de color */
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #8eb5c1;
 }
 
 .autoridad-box p,
@@ -71,9 +68,60 @@ h2 {
 
 .cargo {
   font-weight: normal;
-  color: #505f73; /* Color más suave para los cargos */
+  color: #505f73;
 }
 
 p {
   color: #373f51;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .institucional-header {
+    padding: 60px;
+    font-size: 2.5rem;
+  }
+
+  .autoridades {
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .autoridades-boxes,
+  .nivel-secundario-boxes,
+  .nivel-primario-boxes,
+  .nivel-inicial-boxes {
+    gap: 10px;
+  }
+
+  .autoridad-box,
+  .nivel-box {
+    width: 150px;
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .institucional-header {
+    padding: 40px;
+    font-size: 2rem;
+  }
+
+  .autoridad-box,
+  .nivel-box {
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .autoridades-boxes,
+  .nivel-secundario-boxes,
+  .nivel-primario-boxes,
+  .nivel-inicial-boxes {
+    flex-direction: column;
+  }
 }

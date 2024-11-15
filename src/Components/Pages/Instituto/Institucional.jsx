@@ -31,7 +31,7 @@ const Institucional = () => {
 
       {/* Sección de Nivel Secundario */}
       <section className="nivel-secundario-section">
-        <h2>AUTORIDADES ACADÉMICAS</h2>
+        <h2 className="autoridades">AUTORIDADES ACADÉMICAS</h2>
         <h2 className="section-title">NIVEL SECUNDARIO</h2>
         <div className="nivel-secundario-boxes">
           <div className="nivel-box">
