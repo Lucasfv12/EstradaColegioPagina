@@ -1,0 +1,88 @@
+/* Estilos generales para el encabezado */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  box-sizing: border-box; /* Asegura que el padding/margin no rompa el diseño */
+}
+
+.pastoral-header {
+  background-color: #e4b1b1; /* Color de fondo rojo pastel */
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.pastoral-header h1 {
+  font-size: 4rem;
+  color: #fff;
+  margin: 0;
+}
+
+.pastoral-banner {
+  background: url("/images/pastoral.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw; /* Cambiar de 100% a 100vw para usar todo el ancho de la ventana */
+  max-width: 100%; /* Previene desbordamientos adicionales */
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px; /* Ajusta si es necesario */
+  position: relative;
+  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+}
+
+.pastoral-banner .banner-message {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Contenedor principal con dos columnas */
+.pastoral-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px; /* Más espacio entre las columnas */
+  padding: 50px 150px; /* Más margen alrededor del contenido */
+  background-color: #f9f9f9; /* Color de fondo suave */
+}
+
+.pastoral-column {
+  flex: 1; /* Hace que las columnas ocupen el mismo ancho */
+  text-align: justify;
+}
+
+.pastoral-column h2 {
+  font-size: 1.5rem; /* Tamaño reducido para el encabezado */
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.pastoral-column p {
+  font-size: 0.9rem; /* Tamaño reducido para el párrafo */
+  color: #555;
+  line-height: 1.8; /* Aumenta el espacio entre líneas */
+  margin-bottom: 20px; /* Más espacio entre párrafos */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .pastoral-content {
+    flex-direction: column;
+    padding: 30px 20px; /* Ajusta el margen en dispositivos móviles */
+  }
+
+  .pastoral-column {
+    margin-bottom: 20px;
+  }
+}

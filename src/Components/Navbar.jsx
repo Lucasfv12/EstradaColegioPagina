@@ -52,13 +52,13 @@ const NavBar = ({ className, onMenuToggle }) => {
                 <Link to="/nivel-primario">Nivel Primario</Link>
               </li>
               <li>
-                <a href="#nivel-secundario">Nivel Secundario</a>
+                <Link to="/nivel-secundario">Nivel Secundario</Link>
               </li>
             </ul>
           )}
         </li>
         <li>
-          <a href="#pastoral">Pastoral</a>
+          <Link to="/pastoral">Pastoral</Link>
         </li>
         <li>
           <a href="#contactos">Contactos</a>

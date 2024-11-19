@@ -14,6 +14,8 @@ import CampusCultura from "./Components/CampusCultura";
 import NivelInicial from "./Components/Pages/NivelInicial/NivelInicial";
 import Institucional from "./Components/Pages/Instituto/Institucional";
 import NivelPrimario from "./Components/Pages/NivelPrimario/NivelPrimario";
+import NivelSecundario from "./Components/Pages/NivelSecundario/NivelSecundario";
+import Pastoral from "./Components/Pages/Pastoral/Pastoral";
 
 function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -58,6 +60,8 @@ function App() {
         <Route path="/nivel-inicial" element={<NivelInicial />} />
         <Route path="/institucional" element={<Institucional />} />
         <Route path="/nivel-primario" element={<NivelPrimario />} />
+        <Route path="/nivel-secundario" element={<NivelSecundario />} />
+        <Route path="/pastoral" element={<Pastoral />} />
 
         {/* Agrega aquí más rutas para otras páginas */}
       </Routes>

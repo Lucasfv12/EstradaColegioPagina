@@ -1,0 +1,101 @@
+.educational-info-section-secundaria {
+  background-color: #d1e8f2; /* Azul pastel para un ambiente más sobrio */
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Evita desbordamientos */
+}
+
+.info-item-secundaria {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-100vw); /* Parte desde el margen izquierdo */
+  animation: slideInSecundaria 2s ease-out forwards;
+  width: 80%;
+  max-width: 800px;
+}
+
+.info-item-secundaria:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.info-item-secundaria:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.info-bar-secundaria {
+  width: 4px;
+  height: 150px;
+  background-color: #1e3a8a; /* Azul oscuro para destacar */
+  margin-right: 30px;
+}
+
+.info-item-secundaria h3 {
+  font-size: 1.5rem;
+  color: #1e3a8a; /* Azul oscuro */
+  margin: 0;
+  margin-right: 30px;
+}
+
+.info-item-secundaria p {
+  font-size: 1rem;
+  color: #333; /* Gris oscuro */
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0;
+}
+
+@keyframes slideInSecundaria {
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Llega a su posición original */
+  }
+}
+
+@media (max-width: 767px) {
+  .educational-info-section-secundaria {
+    padding: 20px;
+  }
+
+  .info-item-secundaria {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .info-bar-secundaria {
+    width: 80%;
+    height: 10px;
+    margin: 0 0 10px 0;
+  }
+
+  .info-item-secundaria h3 {
+    margin-right: 0;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .info-item-secundaria p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .educational-info-section-secundaria {
+    padding: 30px;
+  }
+
+  .info-item-secundaria {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .info-bar-secundaria {
+    height: 120px;
+  }
+}
